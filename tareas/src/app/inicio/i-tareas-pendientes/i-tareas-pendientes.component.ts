@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GruposTareasService } from '../../grupos-tareas.service';
 
 @Component({
   selector: 't-i-tareas-pendientes',
@@ -7,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ITareasPendientesComponent implements OnInit {
 
-  listaPendientes:string[] = ["Hacer tarea", "Terminar nextU", "Acabar App", "Acabar sitio", "Hacer mantenimiento"];
+  listaPendientes = this.gruposTareasService.listaPendientes;
 
-  constructor() { }
+  constructor(private gruposTareasService: GruposTareasService) { }
 
   ngOnInit() {
   }

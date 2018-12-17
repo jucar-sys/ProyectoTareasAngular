@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GruposTareasService } from '../../grupos-tareas.service';
 
 @Component({
   selector: 't-i-tareas-grupos',
@@ -7,29 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ITareasGruposComponent implements OnInit {
 
-  //Array de objetos para almacenar los grupos
-  listaGrupos=[
-    {
-      nombre: "Grupo 1",
-      icono: "android",
-      resaltado: false
-    },
+  listaGrupos= this.gruposTareasService.listaGrupos;//Se toma el valor del objeto declarado en el servicio y se adigna aun objeto del componente
 
-    {
-      nombre: "Grupo 2",
-      icono: "android",
-      resaltado: false
-    },
-
-    {
-      nombre: "Grupo 3",
-      icono: "android",
-      resaltado: false
-    }
-
-  ];
-
-  constructor() { }
+  constructor(private gruposTareasService: GruposTareasService) { }
 
   ngOnInit() {
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GruposTareasService } from '../../grupos-tareas.service';
 
 @Component({
   selector: 't-i-tareas-hoy',
@@ -7,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ITareasHoyComponent implements OnInit {
 
-  listaHoy:string[] = ["Hacer tarea", "Terminar nextU", "Acabar App", "Acabar sitio", "Hacer mantenimiento"];
+  listaHoy = this.gruposTareasService.fechaTarea();
 
-  constructor() { }
+  constructor(private gruposTareasService: GruposTareasService) { }
 
   ngOnInit() {
   }
